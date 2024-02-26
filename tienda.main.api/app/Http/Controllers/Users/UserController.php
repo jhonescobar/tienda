@@ -41,7 +41,7 @@ class UserController extends Controller {
         $request = new Request();
         $request->merge([
             'usu_username' => $datos['username'],
-            'usu_password' => $datos['password'],
+            'usu_password' => Hash::make($datos['password']),
             'estado'   => 'ACTIVO'
         ]);
 
